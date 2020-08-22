@@ -1,0 +1,80 @@
+apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.example.vktest"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-messaging:20.2.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.vk:androidsdk:1.6.7'
+
+    implementation "tech.schoolhelper:moxy-x:1.7.0"
+    implementation 'tech.schoolhelper:moxy-x-androidx:1.7.0'
+    implementation "tech.schoolhelper:moxy-x-android:1.7.0"
+    annotationProcessor "tech.schoolhelper:moxy-x-compiler:1.7.0"
+
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    api 'com.google.dagger:dagger:2.28.1'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.28.1'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    implementation 'com.github.bumptech.glide:glide:3.7.0'
+
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.2'
+
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
+    implementation 'com.jakewharton:butterknife:10.2.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.0'
+
+    implementation('com.mikepenz:materialdrawer:5.9.5@aar') {
+        transitive = true
+    }
+
+    implementation 'com.mikepenz:google-material-typeface:2.2.0.2.original@aar'
+    implementation 'com.droidninja:filepicker:2.0.8'
+}
